@@ -12,7 +12,7 @@ struct ContentView: View
     @State private var isOn: Bool = true
     
     let numberOfStripes: Int = 10
-    let baseDuration: Double = 0.2
+    let baseDuration: Double = 0.15
     let colorOn: Color = Color(red: 0.39, green: 0.77, blue: 0.44)
     let colorOff: Color = Color(red: 0.91, green: 0.91, blue: 0.92)
     
@@ -27,8 +27,6 @@ struct ContentView: View
             
             geometry in ZStack
             {
-            
-                Color.white
                 let stripeWidth = geometry.size.width / 2 / CGFloat(numberOfStripes)
                 let stripeWidthOffset = stripeWidth / 2
                 let stripeHeight = geometry.size.height
@@ -43,10 +41,13 @@ struct ContentView: View
                                   y: stripeHeightOffset)
                         .animation(.easeInOut(duration: !isOn ? baseDuration  * Double(numberOfStripes - i) : baseDuration * Double(i + 1))
                         )
-                        .foregroundColor(isOn ? colorOn : colorOff)
+                        .foregroundColor(.white)
                 }
             }
+            .background(isOn ? colorOff : colorOn)
             .frame(width: geometry.size.width)
+            .animation(.easeInOut(duration: Double(numberOfStripes) * baseDuration))
+            
             
         }
         .ignoresSafeArea()
@@ -56,6 +57,10 @@ struct ContentView: View
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView()
+            ContentView()
+        }
     }
 }
