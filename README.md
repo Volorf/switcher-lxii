@@ -1,6 +1,6 @@
 # Switcher LXII
 
-![Switch LXX](demo.gif)
+![Switch LXII](demo.gif)
 
 ## Links
 
