@@ -1,6 +1,10 @@
+
+
+
+
 # Switcher LXII
 
-![Switch LXX](/demo.mp4)
+![Switch LXX](demo.gif)
 
 ## Links
 
