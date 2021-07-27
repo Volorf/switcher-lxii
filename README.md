@@ -1,7 +1,3 @@
-
-
-
-
 # Switcher LXII
 
 ![Switch LXX](demo.gif)
